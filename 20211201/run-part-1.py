@@ -1,4 +1,12 @@
+import argparse
 
+print(f'Advent of Code 2021 Day 1 Part One')    
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument("--debug",help = "Will add some extra output to add to the confusion")
+
+args = parser.parse_args()
 
 count = 0
 previous = 0 
@@ -16,7 +24,7 @@ def fileToArray( file ):
 
     return measurements
 
-measurements = fileToArray('20211201-data.txt')
+measurements = fileToArray('data.txt')
 
 for x in measurements:
     count += 1
@@ -34,7 +42,9 @@ for x in measurements:
     else: 
         message = 'N/A - no previous sum'
 
-    print(f'{count}: {message}')
+    if (args.debug):
+        print(f'{count}: {message}')
+        
     previous = current
 
 print(f'Total: {count}')    
