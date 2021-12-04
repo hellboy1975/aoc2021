@@ -1,6 +1,7 @@
 # some shared code between day challenges
 
 import array
+import importlib
 
 # take the input file, and read it into an array
 def fileToArray( file ):
@@ -31,6 +32,7 @@ def printSubmarine():
 
 # returns a list of solutions I've added
 def getSolutions():
+    #TODO: maybe this could iterate the folders/files
     return [
         "day_1.part_1",
         "day_1.part_2",
@@ -55,3 +57,13 @@ class bcolours:
     BLUEBG = '\033[104m'
     PINKBG = '\033[105m'
     CYANBG = '\033[106m'
+
+def runSolution(solution, debug):
+    try:
+        if debug:
+            print(f'{solution} found!')    
+        module = importlib.import_module(solution)
+        thingo = module.Solution(debug)
+        thingo.run()
+    except Exception as e:
+        print(f'  Exception! {bcolours.FAIL}{e}{bcolours.ENDC}')    
