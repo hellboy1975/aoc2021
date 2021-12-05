@@ -1,7 +1,8 @@
 # some shared code between day challenges
 
-import array
 import importlib
+import traceback
+import re
 
 # take the input file, and read it into an array
 def fileToArray( file ):
@@ -37,7 +38,8 @@ def getSolutions():
         "day_1.part_1",
         "day_1.part_2",
         "day_2.part_1",
-        "day_2.part_2"
+        "day_2.part_2",
+        "day_3.part_1"
         ]
 
 class bcolours:
@@ -66,4 +68,10 @@ def runSolution(solution, debug):
         thingo = module.Solution(debug)
         thingo.run()
     except Exception as e:
-        print(f'  Exception! {bcolours.FAIL}{e}{bcolours.ENDC}')    
+        print(f'  Exception! {bcolours.FAIL}{e}{bcolours.ENDC}')
+        print(traceback.format_exc())
+
+# gets rid of pesky \n characters
+def stripNonNumeric(s):
+    foo = re.compile(r'[^\d.]+')
+    return foo.sub('', s)        
