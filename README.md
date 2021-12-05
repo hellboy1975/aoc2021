@@ -1,10 +1,11 @@
 
 ## Solutions so far:
 
- * Day 1 Part 1 `20211201/day_1_1.py`
- * Day 1 Part 2 `20211201/day_1_2py`
- * Day 2 Part 1 `20211202/day_2_1.py` 
- * Day 2 Part 2 `20211202/day_2_2.py`
+ * Day 1 Part 1 `day_1/part_1.py`
+ * Day 1 Part 2 `day_1/part_2.py`
+ * Day 2 Part 1 `day_2/part_1.py`
+ * Day 2 Part 2 `day_2/part_2.py`
+ * Day 3 Part 1 `day_3/part_1.py`
  
  ## How to run
 
@@ -28,3 +29,4 @@ Examples:
  * `python aoc2021.py 1 1` - runs Day 1 Part 1
  * `python aoc2021.py 1 1 --all` - runs all solutions
  * `python aoc2021.py 1 1 --debug` - shows extra debug info (and possible limits the number of loops depending on the solution)
+ 
