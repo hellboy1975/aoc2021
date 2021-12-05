@@ -33,6 +33,7 @@ class Solution:
         print('Totals:')
         print(bit_totals)
 
+        # TODO: I'm sure there's a better way to do this than concatonating strings :|
         gs = es = ''
         for y in bit_totals:
             if (y > (count / 2)):
